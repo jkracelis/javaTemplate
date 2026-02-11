@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'org.example'
-version = '1.0-SNAPSHOT'
+version = '0.0.0'
 
 repositories {
     mavenCentral()
@@ -18,6 +18,14 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.Main'
+        )
+    }
 }
 
 // configuration
@@ -34,4 +42,12 @@ spotless {
 // run spotlessCheck in build
 tasks.named("build") {
     dependsOn("spotlessCheck")
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.Main'
+        )
+    }
 }
