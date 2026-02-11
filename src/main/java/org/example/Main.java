@@ -5,6 +5,6 @@ public class Main {
         System.out.println("hi");
         Calculator calculator = new Calculator();
         int result = calculator.add(2, 3);
-        System.out.println(result)
+        System.out.println(result);
     }
 }
