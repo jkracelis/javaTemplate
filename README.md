@@ -7,17 +7,19 @@ Simple Java 25 template project using Gradle with testing and formatting support
 * Gradle
 * JUnit 5
 * Spotless (Palantir formatter)
+* GitHub Actions (CI)
 
 ---
 ## 📁 Project Structure
 ```
 javaTemplate/
+├── .github/workflows/java-ci.yml
 ├── build.gradle
 ├── settings.gradle
 ├── gradlew
 ├── gradlew.bat
 ├── src/
-│   ├── main/java/org/example/Main.java
+│   ├── main/java/
 │   └── test/java/
 ```
 
@@ -66,4 +68,19 @@ Check formatting:
 ./gradlew spotlessCheck
 ```
 Formatting is enforced during `build`.
+
+## 🔄 Continuous Integration (CI)
+This project uses GitHub Actions to automatically:
+✅ Run formatting check (spotlessCheck)
+✅ Build the project
+✅ Run all tests
+
+CI runs on:
+Every push
+Every pull request
+If formatting fails or tests fail, the build will fail.
+Workflow file:
+```bash
+.github/workflows/ci.yml
+```
 
