@@ -1,0 +1,28 @@
+name: Java CI
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Run Build including formatting
+        run: ./gradlew build
+
+      - name: Run Tests
+        run: ./gradlew test
+
+      - name: Run JAR
+        run: java -jar build/libs/javaTemplate-0.0.0.jar
