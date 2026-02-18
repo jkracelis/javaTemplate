@@ -52,6 +52,17 @@ java -jar build/libs/javaTemplate.jar
 ./gradlew run
 ```
 
+## 🐳 running in docker (Optional)
+ - Project folder is bind-mounted (shared with container).
+```bash
+# Build
+docker compose build
+# Run (interactive shell):
+docker compose run --rm java
+# Run the app
+./gradlew run
+```
+
 ---
 ## 🧪 Run Tests
 ```bash
@@ -81,6 +92,5 @@ Every pull request
 If formatting fails or tests fail, the build will fail.
 Workflow file:
 ```bash
-.github/workflows/ci.yml
+.github/workflows/java-ci.yml
 ```
-
