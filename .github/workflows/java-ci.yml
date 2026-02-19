@@ -18,11 +18,8 @@ jobs:
           distribution: temurin
           java-version: '25'
 
-      - name: Run Build including formatting
-        run: ./gradlew build
-
-      - name: Run Tests
-        run: ./gradlew test
+      - name: Run Build (includes Spotless check + tests)
+        run: ./gradlew clean build
 
       - name: Run JAR
         run: java -jar build/libs/javaTemplate-0.0.0.jar
